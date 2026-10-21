@@ -51,3 +51,12 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 .benefit-overlay{background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.06) 65%,rgba(0,0,0,.76) 100%)}
 .benefit-text{position:relative;z-index:2}
 @media(max-width:600px){.benefits{gap:18px}.benefit{height:clamp(430px,133vw,630px);border-radius:16px}.benefit-text{padding:28px}.benefit-text h3{font-size:clamp(35px,9vw,46px)}}
+
+
+/* Benefit image typography: editorial position just below vertical center */
+.benefit{align-items:flex-start}
+.benefit-text{position:absolute;left:0;right:0;top:55%;bottom:auto;padding:0 clamp(26px,4.3vw,64px);transform:translateY(-8%);z-index:3}
+.benefit-text span{display:block;font-size:clamp(17px,1.65vw,23px);line-height:1.15;letter-spacing:.08em;font-weight:800;text-shadow:0 2px 12px #0008}
+.benefit-text h3{font-size:clamp(43px,5.8vw,79px);line-height:1.06;margin-top:14px;max-width:790px;text-shadow:0 3px 22px #0008}
+.benefit-overlay{background:linear-gradient(180deg,transparent 22%,rgba(0,0,0,.12) 39%,rgba(0,0,0,.56) 61%,rgba(0,0,0,.18) 100%)}
+@media(max-width:600px){.benefit-text{top:55%;padding:0 27px;transform:translateY(-8%)}.benefit-text span{font-size:clamp(15px,4vw,19px);letter-spacing:.045em}.benefit-text h3{font-size:clamp(36px,10vw,52px);line-height:1.08;margin-top:11px}}
