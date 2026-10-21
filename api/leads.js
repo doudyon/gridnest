@@ -3,7 +3,12 @@ function getDb() {
   if (!admin.apps.length) {
     const projectId = process.env.FIREBASE_PROJECT_ID;
     const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
-    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+    let privateKey = process.env.FIREBASE_PRIVATE_KEY?.trim();
+    // Vercel may receive the JSON key as an escaped string or with literal line breaks.
+    if (privateKey?.startsWith('"') && privateKey.endsWith('"')) {
+      try { privateKey = JSON.parse(privateKey); } catch (_) { privateKey = privateKey.slice(1,-1); }
+    }
+    privateKey = privateKey?.replace(/\\\\n/g, '\n').replace(/\\r/g, '');
     if (!projectId || !clientEmail || !privateKey) throw new Error('Firebase credentials missing');
     admin.initializeApp({credential: admin.credential.cert({projectId,clientEmail,privateKey})});
   }
