@@ -90,3 +90,11 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 .hero.hero-ready h1,.hero.hero-ready p{animation:none}
 .hero.hero-ready .hero-shade{background:linear-gradient(180deg,#0006 0%,transparent 28%,#0003 45%,rgba(0,0,0,calc(.62 + var(--hero-scroll)*.24)) 100%)}
 @media(prefers-reduced-motion:reduce){.hero-bg,.hero-inner,.hero h1,.hero p{animation:none!important;transform:none!important;filter:none!important;opacity:1!important}.hero.hero-ready .hero-bg,.hero.hero-ready .hero-inner{transform:none!important;filter:none!important;opacity:1!important}}
+
+
+/* Sequential three-second hero reveal: image 0–1s, heading 1–2s, description 2–3s */
+.hero-bg{animation:gnHeroImageIn 1s cubic-bezier(.22,1,.36,1) both}
+.hero-inner{animation:none!important}
+.hero h1{animation:gnHeroTitleIn 1s 1s cubic-bezier(.22,1,.36,1) both}
+.hero p{animation:gnHeroTitleIn 1s 2s cubic-bezier(.22,1,.36,1) both}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero h1,.hero p{animation:none!important}}
