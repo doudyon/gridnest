@@ -268,3 +268,26 @@ html[dir="rtl"] .app-slide-copy {
 .app-slider-wrap.scroll-reveal{transform:translate3d(0,30px,0) scale(.99)}
 .app-slider-wrap.scroll-reveal.is-revealed{transform:translate3d(0,0,0) scale(1)}
 @media(prefers-reduced-motion:reduce){.scroll-reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+
+/* Unified form entrance, selected radio cards and premium dropdowns */
+#application-form.scroll-reveal{transition-delay:0ms}
+.apply .choice input[type="radio"]{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.apply .choice label{position:relative;cursor:pointer;transition:background .2s ease,box-shadow .2s ease,color .2s ease}
+.apply .choice label:has(input:checked){background:#70EF69;color:#09140b;box-shadow:inset 0 0 0 1px #4fc34a}
+.apply .choice label:has(input:focus-visible){outline:3px solid #162f1a;outline-offset:3px}
+.apply .choice label:hover:not(:has(input:checked)){background:#f0f9ef}
+.apply .custom-select{position:relative;margin-top:8px;min-width:0}
+.apply .custom-select select{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;padding:0!important;margin:0!important}
+.apply .custom-select-trigger{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;height:53px;border:0;border-radius:7px;background:#fff;color:#111;padding:0 17px;font-size:16px;text-align:start;cursor:pointer;transition:box-shadow .2s ease}
+.apply .custom-select-trigger:hover{box-shadow:0 0 0 1px #a5b3a5}
+.apply .custom-select-trigger:focus-visible{outline:3px solid #70EF69;outline-offset:2px}
+.apply .custom-select-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.apply .custom-select-chevron{display:grid;place-items:center;flex:0 0 24px;font-size:23px;font-weight:500;line-height:1;transform:translateY(-3px);transition:transform .2s}
+.apply .custom-select.is-open .custom-select-chevron{transform:rotate(180deg) translateY(3px)}
+.apply .custom-select-menu{position:absolute;top:calc(100% + 8px);inset-inline:0;z-index:30;background:#fff;border:1px solid #e3e8e2;border-radius:10px;padding:7px;box-shadow:0 15px 35px #0002;max-height:240px;overflow-y:auto}
+.apply .custom-select-menu[hidden]{display:none}
+.apply .custom-select-option{display:block;width:100%;min-height:44px;padding:10px 14px;border:0;border-radius:7px;background:transparent;color:#141414;font-size:15px;text-align:start;cursor:pointer;transition:background .15s ease}
+.apply .custom-select-option:hover,.apply .custom-select-option:focus-visible{background:#ecf9e9;outline:none}
+.apply .custom-select-option[aria-selected="true"]{background:#70EF69;color:#102310;font-weight:700}
+html[dir=rtl] .apply .custom-select-trigger,html[dir=rtl] .apply .custom-select-option{text-align:right}
+@media(max-width:600px){.apply .custom-select-trigger{height:42px;font-size:13px;padding:0 12px}.apply .custom-select-chevron{margin-inline:2px}.apply .custom-select-option{min-height:42px;font-size:13px;padding:10px 12px}}
