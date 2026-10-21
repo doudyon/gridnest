@@ -216,3 +216,44 @@ html[dir="rtl"] .app-slide-copy {
 .network-map-corner{z-index:5;color:#b8c8d1}
 @media(max-width:650px){.network-map-story{padding-top:61px;gap:6px}.network-story-eyebrow{font-size:8px;letter-spacing:1.6px}.network-map-story strong{font-size:clamp(22px,5.5vw,28px)}.network-map-story p{font-size:11px;max-width:245px}.network-map-corner-tl{top:16px;left:18px}}
 @media(prefers-reduced-motion:reduce){.network-city,.network-map-story{opacity:1!important;transform:none!important;transition:none!important}.network-trace{animation:none!important;stroke-dasharray:9 13!important;opacity:.95!important}}
+
+/* Four-node constellation: one personal center, three equidistant satellites. */
+.network-map{height:clamp(480px,51vw,580px)}
+.network-map-story{top:0;padding:48px 28px 0;gap:6px;max-width:100%;box-sizing:border-box}
+.network-map-story strong{max-width:720px;font-size:clamp(24px,3vw,36px);line-height:1.14}
+.network-map-story p{max-width:550px;font-size:clamp(12px,1.3vw,15px);line-height:1.45}
+.network-orbit{position:absolute;z-index:3;width:min(350px,62%);aspect-ratio:1;left:50%;top:59%;transform:translate(-50%,-50%);direction:ltr}
+.network-orbit .network-lines{inset:0;width:100%;height:100%}
+.network-orbit .network-node{position:absolute;left:var(--nx);top:var(--ny);transform:translate(-50%,-50%) scale(.85)}
+.network-orbit .network-map.is-visible .network-node{transform:translate(-50%,-50%) scale(1)}
+.network-map.is-visible .network-orbit .network-node{transform:translate(-50%,-50%) scale(1)}
+.network-node-center{--nx:50%;--ny:50%}
+.network-orbit .network-node-one{--nx:50%;--ny:12.5%}
+.network-orbit .network-node-two{--nx:82.5%;--ny:68.75%}
+.network-orbit .network-node-three{--nx:17.5%;--ny:68.75%}
+.network-node-center .network-node-icon{width:82px;height:82px;border-color:#a4ff8f;background:linear-gradient(145deg,#225a33,#091b13);box-shadow:0 0 0 5px #70ef6910,0 0 42px #70ef6959,0 10px 35px #0008}
+.network-node-center .network-node-label{color:#b9ffac;font-size:12px;letter-spacing:1.6px}
+.network-node-center .network-node-ring{width:130px;height:130px;top:-23px;border-color:#70ef6965}
+.network-orbit .network-node-label{position:relative;z-index:2}
+.network-map-corner-tl{top:20px;left:26px}
+.network-map-corner-br{bottom:18px;right:26px}
+.network-map-story{z-index:6}
+.network-orbit .network-trace{stroke:#dceaf6;stroke-width:2.7;stroke-dasharray:7 11;filter:drop-shadow(0 0 2px #b4cfe4)}
+.network-map.is-visible .network-orbit .network-trace{stroke-dasharray:7 11}
+@media(max-width:650px){
+.network-map{height:480px}
+.network-map-story{padding:60px 17px 0;gap:6px}
+.network-map-story strong{font-size:clamp(21px,5.6vw,27px);max-width:330px}
+.network-map-story p{max-width:300px;font-size:11px}
+.network-orbit{width:min(275px,83%);top:61%}
+.network-orbit .network-node-icon{width:55px;height:55px;border-radius:16px}
+.network-orbit .network-node-icon img{width:32px;height:30px}
+.network-orbit .network-node-center .network-node-icon{width:65px;height:65px}
+.network-orbit .network-node-ring{width:84px;height:84px;top:-15px}
+.network-orbit .network-node-center .network-node-ring{width:101px;height:101px;top:-18px}
+.network-orbit .network-node-label{font-size:9px;letter-spacing:.65px}
+.network-orbit .network-node-center .network-node-label{font-size:10px;letter-spacing:1px}
+.network-map-corner-tl{top:16px;left:16px}
+.network-map-corner-br{bottom:15px;right:16px}
+}
+@media(prefers-reduced-motion:reduce){.network-orbit .network-node{transform:translate(-50%,-50%) scale(1)!important}}
