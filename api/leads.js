@@ -25,13 +25,10 @@ module.exports = async (req,res) => {
       language:body.language==='he'?'he':'en',status:'new',source:'gridnest-landing',
       createdAt:admin.firestore.FieldValue.serverTimestamp()
     };
-    if(lead.name.length<2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email) ||
-       lead.phone.length<7 || !lead.city ||
-       !['Apartment','House','Other'].includes(lead.property) ||
-       !['yes','no'].includes(lead.fiber) || !['yes','no'].includes(lead.solar) ||
-       !['Under 1 Gbps','1 Gbps','2 Gbps+'].includes(lead.speed) ||
-       !['1','2','3','4+'].includes(lead.nodes))
-      return res.status(400).json({error:'Please check the form fields'});
+    // All form fields are stored as strings; do not restrict translated values to English enums.
+    if (!lead.name || !lead.phone || !lead.email || !lead.city ||
+        !lead.property || !lead.fiber || !lead.solar || !lead.speed || !lead.nodes)
+      return res.status(400).json({error:'Please complete all form fields'});
     const doc=await getDb().collection('gridnest_leads').add(lead);
     if(process.env.RESEND_API_KEY && process.env.LEAD_NOTIFICATION_FROM){
       try{
