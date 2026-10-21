@@ -8,7 +8,7 @@ function getDb() {
     if (privateKey?.startsWith('"') && privateKey.endsWith('"')) {
       try { privateKey = JSON.parse(privateKey); } catch (_) { privateKey = privateKey.slice(1,-1); }
     }
-    privateKey = privateKey?.replace(/\\\\n/g, '\n').replace(/\\r/g, '');
+    privateKey = privateKey?.replace(/\\n/g, '\n').replace(/\r/g, '');
     if (!projectId || !clientEmail || !privateKey) throw new Error('Firebase credentials missing');
     admin.initializeApp({credential: admin.credential.cert({projectId,clientEmail,privateKey})});
   }
