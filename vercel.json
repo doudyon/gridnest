@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/he",
+      "destination": "/"
+    },
+    {
+      "source": "/he/",
+      "destination": "/"
+    },
+    {
+      "source": "/en",
+      "destination": "/"
+    },
+    {
+      "source": "/en/",
+      "destination": "/"
+    }
+  ]
+}
