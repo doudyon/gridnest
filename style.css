@@ -98,3 +98,12 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 .hero h1{animation:gnHeroTitleIn 1s 1s cubic-bezier(.22,1,.36,1) both}
 .hero p{animation:gnHeroTitleIn 1s 2s cubic-bezier(.22,1,.36,1) both}
 @media(prefers-reduced-motion:reduce){.hero-bg,.hero h1,.hero p{animation:none!important}}
+
+
+/* What is GridNest — refined scroll-scrubbed editorial reveal */
+.intro{position:relative;isolation:isolate}
+.intro h2,.intro p,.intro .outline-button{transform-origin:left center}
+.intro.intro-motion h2{opacity:var(--intro-title-opacity,1);transform:translate3d(0,var(--intro-title-y,0px),0);filter:blur(var(--intro-title-blur,0px));will-change:opacity,transform,filter}
+.intro.intro-motion p{opacity:var(--intro-body-opacity,1);transform:translate3d(0,var(--intro-body-y,0px),0);filter:blur(var(--intro-body-blur,0px));will-change:opacity,transform,filter}
+.intro.intro-motion .outline-button{opacity:var(--intro-button-opacity,1);transform:translate3d(0,var(--intro-button-y,0px),0);will-change:opacity,transform}
+@media(prefers-reduced-motion:reduce){.intro.intro-motion h2,.intro.intro-motion p,.intro.intro-motion .outline-button{opacity:1!important;transform:none!important;filter:none!important}}
