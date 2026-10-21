@@ -24,10 +24,33 @@ const groups=[
 ['.benefits .benefit'],
 ['.app-heading h2','.app-heading p'],
 ['.app-slider-wrap'],
-['.apply h2'],
-['.apply form > label','.apply form > fieldset','.apply form > button'],
+['.apply h2','#application-form'],
 ['.footer-head','.footer-links','.footer-bottom']
 ];
 const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-revealed');observer.unobserve(entry.target)}}},{threshold:.12,rootMargin:'0px 0px -35px 0px'});
 for(const selectors of groups){let items=[];for(const selector of selectors)items.push(...document.querySelectorAll(selector));items.forEach((el,i)=>{el.style.setProperty('--reveal-delay',Math.min(i*105,525)+'ms');el.classList.add('scroll-reveal');observer.observe(el)})}
+})();
+
+/* Accessible pill-style radio choices and fully styled dropdown menus. */
+(()=>{
+const form=document.getElementById('application-form');if(!form)return;
+const dropdowns=[];
+function closeAll(except){for(const d of dropdowns){if(d===except)continue;d.wrapper.classList.remove('is-open');d.trigger.setAttribute('aria-expanded','false');d.menu.hidden=true}}
+for(const select of form.querySelectorAll('select')){
+ const wrapper=document.createElement('div');wrapper.className='custom-select';
+ const trigger=document.createElement('button');trigger.type='button';trigger.className='custom-select-trigger';trigger.setAttribute('aria-haspopup','listbox');trigger.setAttribute('aria-expanded','false');
+ const value=document.createElement('span');value.className='custom-select-value';const arrow=document.createElement('span');arrow.className='custom-select-chevron';arrow.setAttribute('aria-hidden','true');arrow.textContent='⌄';trigger.append(value,arrow);
+ const menu=document.createElement('div');menu.className='custom-select-menu';menu.setAttribute('role','listbox');menu.hidden=true;
+ const id='gridnest-'+select.name;menu.id=id+'-options';trigger.setAttribute('aria-controls',menu.id);
+ select.parentNode.insertBefore(wrapper,select);wrapper.append(select,trigger,menu);
+ const d={wrapper,trigger,menu,select};dropdowns.push(d);
+ function sync(){value.textContent=select.selectedOptions[0]?.textContent||'';menu.replaceChildren();for(const [index,opt] of [...select.options].entries()){if(opt.disabled)continue;const item=document.createElement('button');item.type='button';item.className='custom-select-option';item.setAttribute('role','option');item.setAttribute('aria-selected',String(select.selectedIndex===index));item.textContent=opt.textContent;item.addEventListener('click',()=>{select.selectedIndex=index;select.dispatchEvent(new Event('change',{bubbles:true}));closeAll();trigger.focus()});menu.append(item)}}
+ sync();select.addEventListener('change',sync);
+ new MutationObserver(sync).observe(select,{subtree:true,characterData:true,childList:true});
+ trigger.addEventListener('click',()=>{const opening=menu.hidden;closeAll();menu.hidden=!opening;wrapper.classList.toggle('is-open',opening);trigger.setAttribute('aria-expanded',String(opening));if(opening)menu.querySelector('[aria-selected="true"]')?.focus()});
+ trigger.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='Enter'||e.key===' '){e.preventDefault();if(menu.hidden)trigger.click();else menu.querySelector('button')?.focus()}});
+ menu.addEventListener('keydown',e=>{const items=[...menu.querySelectorAll('button')];let index=items.indexOf(document.activeElement);if(e.key==='Escape'){e.preventDefault();closeAll();trigger.focus()}if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();items[(index+(e.key==='ArrowDown'?1:-1)+items.length)%items.length]?.focus()}if(e.key==='Home'){e.preventDefault();items[0]?.focus()}if(e.key==='End'){e.preventDefault();items.at(-1)?.focus()}});
+}
+document.addEventListener('pointerdown',e=>{if(!e.target.closest('.custom-select'))closeAll()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 })();
