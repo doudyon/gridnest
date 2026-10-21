@@ -1,6 +1,9 @@
 /* Native Hebrew/English localization; user selection overrides browser preference. */
 (()=>{'use strict';
 const translations=[
+['.network-story-eyebrow','בית אחד. רשת גדולה יותר.'],
+['.network-map-story strong','להיות חלק ממשהו גדול יותר.'],
+['.network-map-story p','כל בית מוסיף כוח. כל יחידה מחזקת את הרשת.'],
 ['.network-map-corner-tl','GRIDNEST / רשת מחשוב מבוזרת'],
 ['.network-live-text','3 יחידות מחוברות'],
 ['.hero h1','הבית שלך יכול<br>לעבוד בשבילך'],
