@@ -60,3 +60,15 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 .benefit-text h3{font-size:clamp(43px,5.8vw,79px);line-height:1.06;margin-top:14px;max-width:790px;text-shadow:0 3px 22px #0008}
 .benefit-overlay{background:linear-gradient(180deg,transparent 22%,rgba(0,0,0,.12) 39%,rgba(0,0,0,.56) 61%,rgba(0,0,0,.18) 100%)}
 @media(max-width:600px){.benefit-text{top:55%;padding:0 27px;transform:translateY(-8%)}.benefit-text span{font-size:clamp(15px,4vw,19px);letter-spacing:.045em}.benefit-text h3{font-size:clamp(36px,10vw,52px);line-height:1.08;margin-top:11px}}
+
+
+/* Reference-matched benefits: portrait photography with copy around 60% */
+.benefits{gap:20px}
+.benefit{height:auto;aspect-ratio:0.68;background-image:none!important;background-color:#e4e4e4;border-radius:17px;overflow:hidden}
+.benefit:before{background-image:var(--card-image);background-size:cover!important;background-position:center!important;transform:none!important;inset:0!important}
+.benefit:after{display:none}
+.benefit-overlay{background:linear-gradient(180deg,transparent 26%,rgba(0,0,0,.03) 43%,rgba(0,0,0,.42) 72%,rgba(0,0,0,.16) 100%)}
+.benefit-text{top:59%;transform:none;padding:0 clamp(18px,3.2vw,42px)}
+.benefit-text span{font-size:clamp(13px,1.4vw,18px);letter-spacing:0;font-weight:900;line-height:1.1}
+.benefit-text h3{font-size:clamp(27px,3.8vw,52px);line-height:1.07;margin-top:9px;font-weight:900}
+@media(max-width:600px){.benefits{gap:20px}.benefit{height:auto;aspect-ratio:.68;border-radius:17px}.benefit-text{top:59%;padding:0 20px}.benefit-text span{font-size:clamp(14px,3.5vw,18px)}.benefit-text h3{font-size:clamp(27px,7vw,42px);margin-top:9px}}
