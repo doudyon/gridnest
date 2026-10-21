@@ -1,6 +1,8 @@
 /* Native Hebrew/English localization; user selection overrides browser preference. */
 (()=>{'use strict';
 const translations=[
+['.network-map-corner-tl','GRIDNEST / רשת מחשוב מבוזרת'],
+['.network-live-text','3 יחידות מחוברות'],
 ['.hero h1','הבית שלך יכול<br>לעבוד בשבילך'],
 ['.hero p','מארחים בבית יחידת מחשוב AI של GridNest, נהנים מהכנסה חודשית ולוקחים חלק בדור הבא של הבינה המלאכותית.'],
 ['.intro h2','מה זה GridNest?'],
