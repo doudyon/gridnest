@@ -57,3 +57,10 @@ body{background:var(--paper);color:var(--ink)}
 @keyframes heroEntrance{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.phone-front{animation:floatFront 6s ease-in-out infinite}.phone-back{animation:floatBack 7s ease-in-out infinite}}
 @media(prefers-reduced-motion:reduce){.reveal{filter:none}}
+
+/* Consistent vector line icon system — never render as iOS emoji */
+.brand-icon svg,.network-core svg,.product-bubble svg,.eligibility-note svg,.apply-graphic>svg{width:1em;height:1em;display:inline-block;vertical-align:middle}
+.nav-cta svg,.btn svg,.text-link svg,.inline-arrow svg,.circle-arrow svg,.feature-icon svg,.step-icon svg,.submit svg,.footer-top a svg{width:1em;height:1em;display:inline-block;vertical-align:middle;stroke:currentColor}
+.menu svg{width:24px;height:24px;display:block}
+.ticker b svg{width:15px;height:15px;display:inline-block;vertical-align:middle}
+.network-point svg{width:20px;height:20px;vertical-align:middle}
