@@ -153,3 +153,6 @@ html[dir="rtl"] .benefit-text,
 html[dir="rtl"] .app-slide-copy {
   font-family:"Discovery FS",Arial,sans-serif;
 }
+
+/* Keep the What is GridNest heading static while the copy and CTA reveal on scroll. */
+.intro.intro-motion h2{opacity:1!important;transform:none!important;filter:none!important;will-change:auto!important}
