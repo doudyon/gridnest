@@ -46,6 +46,8 @@ const translations=[
 ['.footer-links a:nth-child(2)','יחידת ה־AI'],
 ['.footer-links a:nth-child(3)','האפליקציה'],
 ['.footer-links a:nth-child(4)','הצטרפות כמארחים'],
+['.footer-links a:nth-child(5)','משקיעים ושותפויות'],
+['.footer-links a:nth-child(6)','מדיניות פרטיות'],
 ['.footer-bottom','©2026 gridnest.cloud, כל הזכויות שמורות.']
 ];
 const labelSelectors=['.apply form>label:nth-of-type(1)','.apply form>label:nth-of-type(2)','.apply form>label:nth-of-type(3)','.apply form>label:nth-of-type(4)','.apply form>label:nth-of-type(5)','.apply form>label:nth-of-type(6)','.apply form>label:nth-of-type(7)'];
