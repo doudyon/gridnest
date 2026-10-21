@@ -14,3 +14,20 @@ const siteHeader=document.getElementById('site-header');if(siteHeader){let heade
 
 /* Reveal the network topology when it enters the viewport. */
 (()=>{const map=document.querySelector('.network-map');if(!map)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){map.classList.add('is-visible');return}const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){map.classList.add('is-visible','is-active')}else{map.classList.remove('is-active')}}},{threshold:.25});observer.observe(map)})();
+
+/* Refined staggered reveals for sections after the intro, without overriding the
+   hero sequence, the intro scrub or the animated network topology. */
+(()=>{if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const groups=[
+['.node-image'],
+['.node-copy h2','.node-copy p'],
+['.benefits .benefit'],
+['.app-heading h2','.app-heading p'],
+['.app-slider-wrap'],
+['.apply h2'],
+['.apply form > label','.apply form > fieldset','.apply form > button'],
+['.footer-head','.footer-links','.footer-bottom']
+];
+const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-revealed');observer.unobserve(entry.target)}}},{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+for(const selectors of groups){let items=[];for(const selector of selectors)items.push(...document.querySelectorAll(selector));items.forEach((el,i)=>{el.style.setProperty('--reveal-delay',Math.min(i*105,525)+'ms');el.classList.add('scroll-reveal');observer.observe(el)})}
+})();
