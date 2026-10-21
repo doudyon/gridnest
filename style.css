@@ -107,3 +107,31 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 .intro.intro-motion p{opacity:var(--intro-body-opacity,1);transform:translate3d(0,var(--intro-body-y,0px),0);filter:blur(var(--intro-body-blur,0px));will-change:opacity,transform,filter}
 .intro.intro-motion .outline-button{opacity:var(--intro-button-opacity,1);transform:translate3d(0,var(--intro-button-y,0px),0);will-change:opacity,transform}
 @media(prefers-reduced-motion:reduce){.intro.intro-motion h2,.intro.intro-motion p,.intro.intro-motion .outline-button{opacity:1!important;transform:none!important;filter:none!important}}
+
+
+/* Internationalization and full right-to-left support */
+.header-actions{display:flex;align-items:center;gap:16px}
+.language-toggle{background:transparent;color:inherit;border:1px solid currentColor;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;line-height:1.1;min-width:65px;transition:background .2s,color .2s}
+.language-toggle:hover{background:#ffffff24}
+.header.is-scrolled .language-toggle:hover{background:#0000000d}
+html[dir=rtl] body{font-family:Arial,"Noto Sans Hebrew",sans-serif;text-align:right}
+html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3{font-family:Arial,"Noto Sans Hebrew",sans-serif;letter-spacing:-.035em}
+html[dir=rtl] .hero-inner,html[dir=rtl] .intro,html[dir=rtl] .node-copy,html[dir=rtl] .app-heading,html[dir=rtl] .app-slide-copy,html[dir=rtl] .benefit-text{text-align:right}
+html[dir=rtl] .intro h2,html[dir=rtl] .intro p,html[dir=rtl] .intro .outline-button{transform-origin:right center}
+html[dir=rtl] .header{direction:ltr}
+html[dir=rtl] .header-actions{direction:ltr}
+html[dir=rtl] .hero-inner{direction:rtl}
+html[dir=rtl] .outline-button span,html[dir=rtl] .submit span{display:inline-block;transform:scaleX(-1)}
+html[dir=rtl] .benefit-text{direction:rtl}
+html[dir=rtl] .app-slider,html[dir=rtl] .app-slider-controls{direction:ltr}
+html[dir=rtl] .app-slide-copy{direction:rtl}
+html[dir=rtl] .apply form{direction:rtl}
+html[dir=rtl] .apply input:not([type=radio]),html[dir=rtl] .apply select{text-align:right}
+html[dir=rtl] .apply input[type=email],html[dir=rtl] .apply input[type=tel]{direction:ltr;text-align:left}
+html[dir=rtl] .footer{direction:rtl}
+html[dir=rtl] .footer-head{direction:ltr}
+html[dir=rtl] .footer-links{direction:rtl}
+html[dir=rtl] .footer-bottom{direction:ltr;text-align:center}
+html[dir=rtl] .hero h1{font-size:clamp(52px,7.5vw,110px);line-height:1.12}
+html[dir=rtl] .benefit-text h3{line-height:1.15}
+@media(max-width:600px){.header-actions{gap:8px}.language-toggle{font-size:12px;padding:8px 10px;min-width:56px}html[dir=rtl] .hero h1{font-size:clamp(48px,11vw,72px)}}
