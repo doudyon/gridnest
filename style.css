@@ -41,3 +41,13 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 @keyframes heroCopyReveal{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.header{top:14px!important;left:20px!important;right:20px!important;height:61px!important;padding:0 21px!important;border-radius:11px}}
 @media(prefers-reduced-motion:reduce){.hero-bg,.hero-inner{animation:none!important}.header{transition:none!important}}
+
+
+/* Benefits: tall editorial image cards, uncropped photography */
+.benefits{gap:24px}
+.benefit{height:clamp(510px,62vw,740px);background-color:#1d2228;background-position:center;background-size:cover;isolation:isolate}
+.benefit:before{background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;inset:0!important;z-index:-1}
+.benefit:after{content:"";position:absolute;inset:0;z-index:-2;background:rgba(10,15,20,.42);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.benefit-overlay{background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.06) 65%,rgba(0,0,0,.76) 100%)}
+.benefit-text{position:relative;z-index:2}
+@media(max-width:600px){.benefits{gap:18px}.benefit{height:clamp(430px,133vw,630px);border-radius:16px}.benefit-text{padding:28px}.benefit-text h3{font-size:clamp(35px,9vw,46px)}}
