@@ -26,3 +26,18 @@ h1,h2,h3{font-family:"Discovery FS",Arial,sans-serif;font-weight:900;letter-spac
 @media(max-width:900px){.app-slide{flex-basis:calc((100% - 24px)/2)}.app-phone{height:410px}}
 @media(max-width:600px){.app-heading{margin-bottom:20px}.app-heading>p{font-size:14px}.app-slider{gap:14px;padding-bottom:14px}.app-slide{flex-basis:86%}.app-phone{height:370px;border-radius:14px;padding:14px}.app-slide-copy{padding:20px 3px 0}.app-slide-index{font-size:10px;margin-bottom:9px}.app-slide-copy h3{font-size:23px;margin-bottom:8px}.app-slide-copy p{font-size:14px}.app-slider-controls{padding-top:5px}}
 @media(prefers-reduced-motion:reduce){.app-slider{scroll-behavior:auto}}
+
+
+/* Floating fixed navigation: transparent on hero, rounded white on scroll */
+.header{position:fixed!important;top:18px!important;left:clamp(16px,3vw,42px)!important;right:clamp(16px,3vw,42px)!important;width:auto!important;height:64px!important;padding:0 22px!important;z-index:1000!important;border-radius:15px;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;transition:background-color .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s cubic-bezier(.2,.8,.2,1),backdrop-filter .38s,border-radius .38s,transform .38s}
+.header.is-scrolled{background:#fff;box-shadow:0 10px 38px rgba(0,0,0,.13),0 1px 3px rgba(0,0,0,.05);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#111}
+.header .logo img{filter:brightness(0) invert(1);transition:filter .35s}
+.header.is-scrolled .logo img{filter:brightness(0)}
+.header .menu-link{color:white;transition:color .35s}
+.header.is-scrolled .menu-link{color:#111}
+.hero-bg{will-change:transform;animation:heroSlowReveal 1.8s cubic-bezier(.16,1,.3,1) both}
+.hero-inner{animation:heroCopyReveal 1.15s .18s cubic-bezier(.16,1,.3,1) both}
+@keyframes heroSlowReveal{from{transform:scale(1.085);filter:brightness(.78)}to{transform:scale(1);filter:brightness(1)}}
+@keyframes heroCopyReveal{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.header{top:14px!important;left:20px!important;right:20px!important;height:61px!important;padding:0 21px!important;border-radius:11px}}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero-inner{animation:none!important}.header{transition:none!important}}
