@@ -10,3 +10,10 @@
 /* Distinct home Node photograph, preserving shared GridNest hero treatment */.node-page-hero .hero-bg{background-image:url('/thenodeback.png');background-position:center 55%;background-size:cover}@media(max-width:850px){.node-page-hero .hero-bg{background-position:center 52%}}
 
 /* Privacy policy: prevent RTL text clipping and horizontal overflow on phones/tablets */.policy{width:100%;max-width:1080px;min-width:0;overflow-wrap:break-word}.policy-sections{width:100%;min-width:0}.policy-sections section{min-width:0}.policy-sections section>*{min-width:0;max-width:100%;overflow-wrap:anywhere}.policy-sections h2{line-height:1.35}.policy-sections p{line-height:1.8;word-break:normal;overflow-wrap:break-word}@media(max-width:1100px){.policy{padding-left:clamp(20px,5vw,45px);padding-right:clamp(20px,5vw,45px)}.policy-sections section{grid-template-columns:minmax(0,1fr);gap:16px;padding:30px 0}.policy-sections h2{font-size:clamp(20px,3.8vw,27px)}.policy-sections p{font-size:clamp(15px,2.6vw,18px)}}@media(max-width:600px){.policy{padding-left:22px;padding-right:22px}.policy-sections{margin-top:65px}.policy-sections section{padding:27px 0}.policy-sections h2{font-size:21px}.policy-sections p{font-size:16px;line-height:1.75}}
+
+/* Privacy page: requested uniform 10px inner spacing */
+.policy{box-sizing:border-box!important;padding-left:10px!important;padding-right:10px!important;max-width:100%!important;overflow-x:hidden!important}
+.policy-sections,.policy-sections section{box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-width:0!important}
+.policy-sections section{padding:10px!important;grid-template-columns:minmax(0,1fr)!important}
+.policy-sections section>*{min-width:0!important;max-width:100%!important;overflow-wrap:break-word!important}
+.policy h1,.policy h2,.policy p,.policy .eyebrow{box-sizing:border-box!important;max-width:100%!important;overflow-wrap:break-word!important}
