@@ -156,3 +156,36 @@ html[dir="rtl"] .app-slide-copy {
 
 /* Keep the What is GridNest heading static while the copy and CTA reveal on scroll. */
 .intro.intro-motion h2{opacity:1!important;transform:none!important;filter:none!important;will-change:auto!important}
+
+/* Animated connected AI Node network map */
+.network-map-section{background:#fff;padding:0 22px 105px}
+.network-map{position:relative;isolation:isolate;overflow:hidden;width:min(100%,1120px);height:clamp(350px,48vw,550px);margin-inline:auto;border-radius:25px;background:radial-gradient(ellipse at 50% 48%,#173226 0%,#0c1914 45%,#080f0d 100%);color:#e8f7ed;direction:ltr}
+.network-map-grid{position:absolute;inset:0;opacity:.42;background-image:linear-gradient(#8cff8212 1px,transparent 1px),linear-gradient(90deg,#8cff8212 1px,transparent 1px);background-size:35px 35px;mask-image:radial-gradient(ellipse at center,#000 12%,transparent 90%)}
+.network-map-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 51% 46%,#64eb5816,transparent 48%);pointer-events:none}
+.network-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.network-route{fill:none;stroke:#72ef69;stroke-width:1.25;stroke-opacity:.25;stroke-dasharray:5 8}
+.network-trace{fill:none;stroke:#80ff79;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:0 1000;filter:drop-shadow(0 0 6px #70ef69);opacity:0;transition:stroke-dasharray 1.4s cubic-bezier(.22,1,.36,1),opacity .4s}
+.network-map.is-visible .network-trace{stroke-dasharray:1000 0;opacity:.65}
+.network-map.is-visible .network-trace-b{transition-delay:.35s}
+.network-map.is-visible .network-trace-c{transition-delay:.7s}
+.network-node{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;transform:translate(-50%,-50%) scale(.85);opacity:0;transition:transform .75s cubic-bezier(.2,1.4,.3,1),opacity .65s}
+.network-node-one{left:23.5%;top:65.4%}
+.network-node-two{left:51.5%;top:39.4%}
+.network-node-three{left:81%;top:65.4%}
+.network-map.is-visible .network-node{transform:translate(-50%,-50%) scale(1);opacity:1}
+.network-map.is-visible .network-node-two{transition-delay:.3s}
+.network-map.is-visible .network-node-three{transition-delay:.6s}
+.network-node-ring{position:absolute;top:-20px;left:50%;width:115px;height:115px;transform:translateX(-50%);border:1px solid #70ef6940;border-radius:50%;box-shadow:0 0 0 12px #70ef6908,0 0 55px #70ef6915;pointer-events:none}
+.network-node-ring:after{content:"";position:absolute;inset:11px;border:1px solid #70ef6938;border-radius:50%;animation:gnNodePulse 3.2s ease-in-out infinite}
+.network-node-two .network-node-ring:after{animation-delay:1s}
+.network-node-three .network-node-ring:after{animation-delay:2s}
+.network-node-icon{position:relative;display:grid;place-items:center;width:76px;height:76px;border:1px solid #70ef6980;border-radius:22px;background:linear-gradient(145deg,#183b27,#09160f);box-shadow:0 0 32px #70ef6922,inset 0 1px #ffffff14}
+.network-node-icon img{width:42px;height:38px;object-fit:contain;filter:drop-shadow(0 0 8px #70ef6960)}
+.network-node-label{display:flex;align-items:center;gap:9px;white-space:nowrap;font-size:11px;font-weight:800;letter-spacing:1.8px;color:#e4f5e4;font-family:"Discovery FS",Arial,sans-serif}
+.network-node-label i,.network-live-dot{width:6px;height:6px;border-radius:50%;background:#70ef69;box-shadow:0 0 10px #70ef69}
+.network-map-corner{position:absolute;z-index:3;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#9ab2a4;font-family:"Discovery FS",Arial,sans-serif}
+.network-map-corner-tl{top:30px;left:34px}
+.network-map-corner-br{bottom:28px;right:34px;display:flex;align-items:center;gap:10px}
+@keyframes gnNodePulse{0%,100%{opacity:.35;transform:scale(.95)}50%{opacity:1;transform:scale(1.1)}}
+@media(max-width:650px){.network-map-section{padding:0 16px 72px}.network-map{height:370px;border-radius:19px}.network-node-icon{width:56px;height:56px;border-radius:16px}.network-node-icon img{width:33px;height:30px}.network-node-ring{width:86px;height:86px;top:-15px}.network-node{gap:9px}.network-node-label{font-size:9px;letter-spacing:1px}.network-map-corner{font-size:9px;letter-spacing:1px}.network-map-corner-tl{top:21px;left:20px}.network-map-corner-br{bottom:20px;right:20px}}
+@media(prefers-reduced-motion:reduce){.network-trace{stroke-dasharray:none!important;opacity:.65!important;transition:none!important}.network-node{opacity:1!important;transform:translate(-50%,-50%) scale(1)!important;transition:none!important}.network-node-ring:after{animation:none!important}}
