@@ -214,5 +214,5 @@ html[dir="rtl"] .app-slide-copy {
 .network-map-story strong{font-family:"Discovery FS",Arial,sans-serif;font-size:clamp(23px,3.3vw,39px);line-height:1.12;font-weight:900;color:#fff;letter-spacing:-.035em}
 .network-map-story p{font-family:"Discovery FS",Arial,sans-serif;font-size:clamp(12px,1.35vw,15px);color:#d4e1e8;line-height:1.4;margin:0}
 .network-map-corner{z-index:5;color:#b8c8d1}
-@media(max-width:650px){.network-map-story{padding-top:61px;gap:6px}.network-story-eyebrow{font-size:8px;letter-spacing:1.6px}.network-map-story strong{font-size:clamp(22px,5.5vw,28px)}.network-map-story p{font-size:11px;max-width:245px}.network-node-one{left:23.5%;top:68%}.network-node-two{left:51.5%;top:43%}.network-node-three{left:81%;top:68%}.network-map-corner-tl{top:16px;left:18px}}
+@media(max-width:650px){.network-map-story{padding-top:61px;gap:6px}.network-story-eyebrow{font-size:8px;letter-spacing:1.6px}.network-map-story strong{font-size:clamp(22px,5.5vw,28px)}.network-map-story p{font-size:11px;max-width:245px}.network-map-corner-tl{top:16px;left:18px}}
 @media(prefers-reduced-motion:reduce){.network-city,.network-map-story{opacity:1!important;transform:none!important;transition:none!important}.network-trace{animation:none!important;stroke-dasharray:9 13!important;opacity:.95!important}}
