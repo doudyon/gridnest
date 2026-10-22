@@ -303,3 +303,7 @@ html[dir=rtl] .apply .custom-select-trigger,html[dir=rtl] .apply .custom-select-
 .apply .custom-select.is-placeholder .custom-select-value{color:#a5aaa7!important;font-weight:400}
 .apply select:required:invalid{color:#a5aaa7}
 .apply select option{color:#141414}
+
+/* All dropdown buttons: gray prompt until user chooses a value */
+.apply .custom-select.is-placeholder .custom-select-trigger,.apply .custom-select.is-placeholder .custom-select-value{color:#a5aaa7!important}
+.apply .custom-select:not(.is-placeholder) .custom-select-trigger,.apply .custom-select:not(.is-placeholder) .custom-select-value{color:#141414!important}
