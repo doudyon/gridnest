@@ -53,7 +53,7 @@ const translations=[
 const labelSelectors=['.apply form>label:nth-of-type(1)','.apply form>label:nth-of-type(2)','.apply form>label:nth-of-type(3)','.apply form>label:nth-of-type(4)','.apply form>label:nth-of-type(5)','.apply form>label:nth-of-type(6)','.apply form>label:nth-of-type(7)'];
 const originals=new Map();for(const [selector] of translations){const el=document.querySelector(selector);if(el&&!originals.has(selector))originals.set(selector,el.innerHTML)}
 const labels=['שם מלא','מספר טלפון','כתובת אימייל','איפה אתם גרים?','מה סוג הנכס?','מה מהירות האינטרנט שלכם?','כמה יחידות GridNest תרצו לארח?'];
-const optionNames={'Apartment':'דירה','House':'בית פרטי','Other':'אחר','Under 1 Gbps':'פחות מ־1 Gbps'};
+const optionNames={'Select property type':'בחרו סוג נכס','Select internet speed':'בחרו מהירות אינטרנט','Select number of Nodes':'בחרו מספר יחידות','Apartment':'דירה','House':'בית פרטי','Other':'אחר','Under 1 Gbps':'פחות מ־1 Gbps'};
 const originalOptions=[...document.querySelectorAll('select option')].map(el=>[el,el.textContent]);
 const originalPlaceholders=[...document.querySelectorAll('input[placeholder]')].map(el=>[el,el.placeholder]);
 const originalRadio=[...document.querySelectorAll('.choice label')].map(el=>[el,[...el.childNodes].find(n=>n.nodeType===Node.TEXT_NODE)?.textContent||'']);
