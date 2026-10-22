@@ -297,3 +297,9 @@ html[dir=rtl] .apply .custom-select-trigger,html[dir=rtl] .apply .custom-select-
 /* Homepage language selector flags */
 .header .language-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important}
 .header .language-toggle .language-flag{display:block!important;visibility:visible!important;opacity:1!important;width:23px!important;height:23px!important;min-width:23px!important;border-radius:50%!important;object-fit:cover!important;flex-shrink:0!important}
+
+/* Form: light gray hints until an actual option is selected */
+.apply input::placeholder{color:#a5aaa7!important;opacity:1}
+.apply .custom-select.is-placeholder .custom-select-value{color:#a5aaa7!important;font-weight:400}
+.apply select:required:invalid{color:#a5aaa7}
+.apply select option{color:#141414}
