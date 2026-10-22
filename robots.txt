@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://gridnest.cloud/sitemap.xml
+Disallow: /api/
+Sitemap: https://www.gridnest.cloud/sitemap.xml
