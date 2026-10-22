@@ -293,3 +293,7 @@ html[dir=rtl] .apply .custom-select-trigger,html[dir=rtl] .apply .custom-select-
 @media(max-width:600px){.apply .custom-select-trigger{height:42px;font-size:13px;padding:0 12px}.apply .custom-select-chevron{margin-inline:2px}.apply .custom-select-option{min-height:42px;font-size:13px;padding:10px 12px}}
 
 /* Circular SVG flag on shared language switch */.language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}.language-flag{display:block;flex:none;width:23px;height:23px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px #ffffff40,0 1px 3px #0002}.language-toggle span{display:inline-block}@media(max-width:600px){.language-toggle{gap:6px}.language-flag{width:21px;height:21px}}
+
+/* Homepage language selector flags */
+.header .language-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important}
+.header .language-toggle .language-flag{display:block!important;visibility:visible!important;opacity:1!important;width:23px!important;height:23px!important;min-width:23px!important;border-radius:50%!important;object-fit:cover!important;flex-shrink:0!important}
