@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gridnest.cloud/</loc></url>
-  <url><loc>https://gridnest.cloud/node.html</loc></url>
-  <url><loc>https://gridnest.cloud/partners.html</loc></url>
-  <url><loc>https://gridnest.cloud/privacy.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://www.gridnest.cloud/en/</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.gridnest.cloud/en/"/><xhtml:link rel="alternate" hreflang="he" href="https://www.gridnest.cloud/he/"/></url>
+<url><loc>https://www.gridnest.cloud/he/</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.gridnest.cloud/en/"/><xhtml:link rel="alternate" hreflang="he" href="https://www.gridnest.cloud/he/"/></url>
+<url><loc>https://www.gridnest.cloud/node.html</loc></url>
+<url><loc>https://www.gridnest.cloud/partners.html</loc></url>
+<url><loc>https://www.gridnest.cloud/privacy.html</loc></url>
 </urlset>
